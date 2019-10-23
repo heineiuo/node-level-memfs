@@ -1,5 +1,10 @@
-import random from './random'
+import { Database, Options } from 'node-level'
 
-export default function main(name: string): number {
-  return (random() + name).length
+export interface MemoryOptions {}
+
+export default class MemoryDatabase extends Database {
+  constructor(options: MemoryOptions) {
+    const dbpath = '/'
+    super(dbpath, options)
+  }
 }
